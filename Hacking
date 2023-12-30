@@ -1,0 +1,29 @@
+Etapas del hacking
+
+1. Reconocimiento
+2. Escaneo
+3. Explotacion
+4. Mantenimiento de acceso
+5. Cubrir huellas
+
+1.RECONOCIMIENTO
+
+En esta etapa se investiga si tiene subdominios, buscando correos de empleados de la empresa, archivos confidenciales
+
+2.ESCANEO
+
+Se escanean los puertos para saber que servicios estan corriendo y que versiones tienen para investigar vulnerabilidades
+
+3.EXPLOTACION
+
+Entrar al servidor y tener los privilegios mas altos(root)
+
+4.MANTENER ACCESO
+
+Dejar algo que nos permita volver al exploit, tambien se hace el pivotin(saltar de un sistema a a un sistema b)
+
+5.Cubrir huellas
+
+Regresar todo a la normalidad
+
+

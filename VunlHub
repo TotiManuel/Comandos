@@ -1,0 +1,19 @@
+VulnHub
+
+/abrir archivo descargado con virtualbox /archivo/
+
+/si en el puerto 21 que corre ftp aparece ftp-anon Anonymous me puedo logear de forma anonima
+/y revisar en todos los puerto con servicio ftp
+
+ftp /ip/
+//name == anonymous y password no es necesario
+
+con bye puedo salir
+
+/si en servicio aparece samba
+
+enum4linux /ip/
+
+//esperar que termine
+
+

@@ -1,0 +1,59 @@
+gobuster -u http://fakebank.com -w wordlist.txt dir
+
+Al escanear puertos con Nmap, hay tres tipos básicos de escaneo. 
+Estos son:
+	Exploraciones de conexión TCP ( -sT)
+	SYN Escaneos "medio abiertos" ( -sS)
+	Escaneos UDP ( -sU)
+
+Además, hay varios tipos de escaneo de puertos menos comunes, 
+algunos de los cuales también cubriremos (aunque con menos detalle).
+Estos son:
+	Exploraciones nulas de TCP ( -sN)
+	Escaneos TCP FIN ( -sF)
+	Escaneos de Navidad TCP ( -sX)
+
+Muchos cortafuegos están configurados para descartar simplemente los paquetes entrantes. Nmap envía una solicitud TCP SYN y no recibe nada. Esto indica que el puerto está protegido por un firewall y, por lo tanto, se considera que el puerto está filtrado .
+
+Dicho esto, es muy fácil configurar un firewall para que responda con un paquete RST TCP. Por ejemplo, en IPtables para Linux, una versión simple del comando sería la siguiente:
+
+iptables -I INPUT -p tcp --dport <port> -j REJECT --reject-with tcp-reset
+
+suele ser una buena práctica ejecutar un análisis de Nmap con la --top-ports <number>opción habilitada. Por ejemplo, escanear con  nmap -sU --top-ports 20 <target>. Explorará los 20 puertos UDP más utilizados, lo que resultará en un tiempo de exploración mucho más aceptable.
+
+Hay muchas categorías disponibles. Algunas categorías útiles incluyen:
+
+    safe:- No afectará al objetivo
+    intrusive:- No es seguro: es probable que afecte al objetivo
+    vuln:- Explorar en busca de vulnerabilidades
+    exploit:- Intento de explotar una vulnerabilidad
+    auth:- Intentar omitir la autenticación para ejecutar servicios (por ejemplo, iniciar sesión en un servidor FTP de forma anónima)
+    brute:- Intento de fuerza bruta de credenciales para ejecutar servicios
+    discovery:- Intente consultar los servicios en ejecución para obtener más información sobre la red (por ejemplo, consultar un servidor SNMP).
+
+Para ejecutar un script específico, usaríamos --script=<script-name> , por ejemplo --script=http-fileupload-exploiter, .
+
+Se pueden ejecutar varios scripts simultáneamente de esta manera separándolos con una coma. Por ejemplo: --script=smb-enum-users,smb-enum-shares
+
+Algunos scripts requieren argumentos (por ejemplo, credenciales, si están explotando una vulnerabilidad autenticada). Estos se pueden dar con el --script-argsinterruptor Nmap. Un ejemplo de esto sería con el http-putscript (usado para subir archivos usando el método PUT). Esto toma dos argumentos: la URL para cargar el archivo y la ubicación del archivo en el disco. Por ejemplo:
+
+nmap -p 80 --script http-put --script-args http-put.url='/dav/shell.php',http-put.file='./shell.php'
+
+Los scripts de Nmap vienen con menús de ayuda incorporados, a los que se puede acceder usando nmap --script-help <script-name>
+
+para buscar scripts de Nmap
+grep "ftp" /usr/share/nmap/scripts/script.db
+
+Los siguientes interruptores son de particular interés:
+
+    -f:- Se utiliza para fragmentar los paquetes (es decir, dividirlos en partes más pequeñas), lo que hace menos probable que los paquetes sean detectados por un firewall o IDS.
+    Una alternativa a -f, pero brindando más control sobre el tamaño de los paquetes: --mtu <number>, acepta un tamaño máximo de unidad de transmisión para usar con los paquetes enviados. Debe ser múltiplo de 8.
+    --scan-delay <time>ms:- se usa para agregar un retraso entre los paquetes enviados. Esto es muy útil si la red es inestable, pero también para evadir cualquier activador de firewall/IDS basado en tiempo que pueda estar en su lugar.
+    --badsum:- esto se usa para generar una suma de verificación no válida para paquetes. Cualquier pila real de TCP/IP eliminaría este paquete, sin embargo, los cortafuegos pueden responder automáticamente, sin molestarse en verificar la suma de verificación del paquete. Como tal, este conmutador se puede utilizar para determinar la presencia de un cortafuegos/IDS.
+
+
+sudo nmap -vv -sS -Pn -T3 -p 0-5000 10.10.152.39 ver que puertos estan abiertos de forma rapida //TCP SYN
+
+
+
+

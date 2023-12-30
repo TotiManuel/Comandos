@@ -1,0 +1,4 @@
+sudo service postgresql start
+sudo msfdb init
+sudo apt-get install metasploit-framework
+

@@ -1,0 +1,9 @@
+Para usar expresiones regulares en herramientas como grep (para buscar texto), 
+sed (para realizar sustituciones) o awk (para procesar texto en columnas), 
+simplemente proporciona la expresión regular como argumento.
+
+grep 'patrón' archivo.txt
+sed 's/patrón/reemplazo/' archivo.txt
+awk '/patrón/ { acción }' archivo.txt
+
+uname -a

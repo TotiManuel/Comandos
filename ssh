@@ -1,0 +1,21 @@
+// generar llave ssh
+
+ssh-keygen
+
+cd .ssh
+
+cat id_rsa.pub
+
+touch authorized_keys
+
+cat id_rsa.pub > authorized_keys
+
+//en ftp
+
+put /direccion completa del archivo autorized_keys/ authorized_keys
+
+//en terminal
+
+ssh smbuser@/ip/
+
+

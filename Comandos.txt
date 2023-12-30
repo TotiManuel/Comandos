@@ -1,0 +1,170 @@
+########################
+# Directorios
+########################
+
+Contiene informacion sobre los usuarios = /etc/passwd
+Contiene las contraseñas cifradas de los usuarios = /etc/shadow
+Contiene informacion sobre las interfaces de red = /etc/network/interfaces
+Contiene Nombre del Host del sistema = /etc/hostname
+Contiene las configuraciones de la shell = .zshrc
+Contiene los datos necesarios para iniciar el sistema = /boot
+Contiene configuracion del sistema y aplicaciones = /etc
+
+########################
+# Variables de Entorno
+########################
+
+Nombre del usuario actual = USER
+Shell actual en uso = SHELL
+Terminal actual en uso = TERM
+Editor de texto predeterminado = EDITOR
+Idioma y Localizacion = LANG
+
+########################
+# Comandos de Ayuda y Soporte
+########################
+
+Ver el manual de un comando = man
+Ver informacion mas detallada de un comando = info
+Descripcion de un comando = whatis
+Buscar Comandos relacionados = apropos
+Buscar donde se almacena un programa = whereis
+Muestra ruta del fichero donde esta el comando = which
+
+########################
+# Comandos de Directorios
+########################
+
+Cambiar de directorio = cd
+imprimer el directorio actual = pwd
+listar ficheros y directorios = ls
+	Mostrar ficheros y directorios ocultos = -a
+	Mostrar datos de ficheros y directorios = -l
+	Listar tambien subdirectorios = -R
+	
+
+########################
+# Comandos de Ficheros
+########################
+
+Crear ficheros vacios = touch
+Copiar ficheros y directorios = cp
+	Pedir confirmacion antes de copiar = -i
+	copiar directorios con subdirectorios = -r
+Mover ficheros y directorios = mv
+	Pedir confirmacion antes de mover = -i
+Remover ficheros o directorios = rm
+	Pedir confirmacion antes de borrar = -i
+	eliminar directorio con subdirectorios = r
+	forzar borrado = -f
+Crear un directorio = mkdir
+	Crear directorios padres o directorios consecutivos = -p
+Eliminar directorios = rmdir
+	ignorar los fallos si no esta vacio = --ignore-fail-on-non-empty
+visualizar ficheros = cat
+	contar numero de lineas = -n
+mostrar primeras lineas de un fichero = head
+	elegir cuantas lineas mostrar = -n
+mostrar ultimas lineas de un fichero = tail
+	elegir cuantas lineas mostrar = -n
+	ver en tiempo real las modificaciones de un archivo = -f
+mostrar ficheros de forma paginada = less
+
+
+########################
+# Stdin, Stdout y Stderr
+########################
+
+StandarInput = Stdin
+	cat 1> text.txt
+Standar Output = Stdout
+	no mostrar el output = >/dev/null
+Standar Error = Stderr
+	no mostrar errores = 2>/dev/null
+no mostrar ninguna salida &>/dev/null
+	
+
+########################
+# Comandos de gestion de usuarios
+########################
+
+Añadir usarios = useradd
+Eliminar usuarios = userdel
+Añadir usarios de forma interactiva = adduser
+Eliminar usuarios de forma interactiva = deluser
+	Elimina usuario y su directorio = --remove-home
+Modificar un usuario = usermod
+	cambiar nombre del usuario = -l
+	cambiar directorio home del usuario = -d
+cambiar la contraseña de un usuario = passwd
+	bloquear contraseña del usuario = -l
+	desbloquear contraseña del usuario = -u
+identificar el usuario actual = id
+	mostrar solo el User ID (UID) = -u
+	mostrar solo el Group ID (GID) = -g
+mostrar quien esta conectado al sistema = who
+	mostrar usuarios conectados y la hora de conexion = -u
+cambiar de usuario = su
+	entorno similar que tendria el usuario al conectarse = -l / --login
+	ejecutar comandos con los permisos de ese usuario = -c
+ejecutar comandos como otro usuario = sudo
+	especificar el usuario que ejecutara el comando = -u
+	entorno similar que tendria el usuario al conectarse = -i
+obtener terminal de root = sudo su
+nombre del usuario actual = whoiam
+Mostrar informacion sobre un usuario = finger
+
+########################
+# Comandos de gestion de grupos
+########################
+
+añadir grupo = addgroup
+eliminar grupo = delgroup
+modificar el grupo = groupmod
+	modificar el nombre del grupo = -n
+administrar contraseñas de grupos y usuarios del grupo = gpasswd
+	añadir un usuario al grupo = -a
+	eliminar un usuario del grupo = -d
+mostrar a que grupos pertenezco = group
+
+
+########################
+# Comandos de gestion de paquetes
+########################
+
+instala dependencias de paquetes = apt
+	actualizar lista de paquetes disponibles = update
+	instala la version mas reciente de los prograas = upgrade
+		no pedir confirmacion = -y
+	actualizar version mas reciente de forma completa = full-upgrade
+	instalar paquete = install
+	eliminar paquetes = remove
+	elimina dependencias en desuso = auto-remove
+gestiona paquetes a bajo nivel(.deb) = dpkg
+	instalar el .deb = -i
+	Eliminar un paquete sin su configuracion = -r
+	Eliminar un paquete con su configuracion = -p
+es parecido a apt = apt-get
+	Actualizar todo automaticamente = dist-upgrade
+consultar a la base de datos = dpkg-query --status locales
+reconfigurar paquetes instalados = dpkg-reconfigure
+activar eventos en el sistema de paquetes = dpkg-trigger
+
+# Fichero donde se muestra de donde sacar los paquetes = /etc/apt/source.list
+# Fichero donde añadir repositorios de terceros = /etc/apt/source.list.d
+
+########################
+# Comandos de gestion de redes
+########################
+
+
+
+
+
+########################
+# Directorios
+########################
+
+########################
+# Directorios
+########################

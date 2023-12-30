@@ -1,0 +1,7 @@
+Fase 2
+
+nmap /ip/
+nmap -p /puertos abierto/ -A /ip/
+//buscar exploit de servicios en internet
+searchsploit /servicio/
+ 
